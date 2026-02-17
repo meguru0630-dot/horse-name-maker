@@ -1,3 +1,35 @@
+// 訪問カウンター機能
+function initVisitorCounter() {
+    const STORAGE_KEY = 'horseNameMakerVisits';
+    let visitCount = parseInt(localStorage.getItem(STORAGE_KEY) || '0');
+
+    // 訪問回数を増やす
+    visitCount++;
+    localStorage.setItem(STORAGE_KEY, visitCount.toString());
+
+    // カウンターを表示（アニメーション付き）
+    const counterElement = document.getElementById('visitorCount');
+    if (counterElement) {
+        // 0から現在の数値までアニメーション
+        let currentCount = 0;
+        const increment = Math.ceil(visitCount / 30); // 30フレームでアニメーション
+        const duration = 1000; // 1秒
+        const stepTime = duration / 30;
+
+        const timer = setInterval(() => {
+            currentCount += increment;
+            if (currentCount >= visitCount) {
+                currentCount = visitCount;
+                clearInterval(timer);
+            }
+            counterElement.textContent = currentCount.toLocaleString('ja-JP');
+        }, stepTime);
+    }
+}
+
+// ページ読み込み時に訪問カウンターを初期化
+document.addEventListener('DOMContentLoaded', initVisitorCounter);
+
 // 競走馬名前生成データベース
 const nameDatabase = {
     // 食べ物系
