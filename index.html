@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>競走馬っぽい名前メーカー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🏇 競走馬っぽい名前メーカー</h1>
+            <p class="subtitle">本格的な競走馬の名前を自動生成</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Theme Selection -->
+            <div class="theme-selector">
+                <label for="theme">名前の傾向：</label>
+                <select id="theme">
+                    <option value="all">ランダム</option>
+                    <option value="food">食べ物系</option>
+                    <option value="animal">生き物系</option>
+                    <option value="space">宇宙系</option>
+                    <option value="idiom">四字熟語系</option>
+                    <option value="nature">自然系</option>
+                    <option value="mythology">神話系</option>
+                    <option value="humor">ユーモア系</option>
+                </select>
+            </div>
+
+            <!-- Generate Button -->
+            <button id="generateBtn" class="generate-btn">
+                <span class="btn-text">名前を生成</span>
+                <span class="btn-icon">✨</span>
+            </button>
+
+            <!-- Output Display -->
+            <div class="output-container">
+                <div id="output" class="output-box">
+                    <span class="placeholder">ここに生成された名前が表示されます</span>
+                </div>
+                <button id="copyBtn" class="copy-btn" disabled>
+                    <span class="copy-icon">📋</span> コピー
+                </button>
+            </div>
+
+            <!-- History Section -->
+            <div class="history-section">
+                <h2>生成履歴 <span id="historyCount">(0/100)</span></h2>
+                <div id="historyList" class="history-list">
+                    <p class="empty-history">まだ履歴がありません</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 競走馬っぽい名前メーカー</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
