@@ -43,7 +43,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
     pointer-events: none;
@@ -81,6 +81,60 @@ header h1 {
     color: var(--text-secondary);
     font-size: 1.1rem;
     font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+/* Visitor Counter */
+.visitor-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 0.5rem 1.25rem;
+    margin-top: 0.75rem;
+    animation: fadeInScale 0.8s ease-out 0.3s both;
+    transition: all 0.3s ease;
+}
+
+.visitor-counter:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.counter-icon {
+    font-size: 1.2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.counter-text {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.counter-number {
+    color: var(--primary-light);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    min-width: 2ch;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
 /* Main Content */
@@ -188,8 +242,15 @@ main {
 }
 
 @keyframes sparkle {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.2) rotate(180deg); }
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
 }
 
 /* Output Container */
@@ -376,6 +437,7 @@ footer {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -387,6 +449,7 @@ footer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -398,6 +461,7 @@ footer {
         opacity: 0;
         transform: scale(0.9);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -409,6 +473,7 @@ footer {
         opacity: 0;
         transform: translateX(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -426,6 +491,19 @@ footer {
     }
 
     .subtitle {
+        font-size: 1rem;
+    }
+
+    .visitor-counter {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .counter-icon {
+        font-size: 1rem;
+    }
+
+    .counter-number {
         font-size: 1rem;
     }
 
